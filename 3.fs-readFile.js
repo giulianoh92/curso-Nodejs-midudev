@@ -1,21 +1,12 @@
 import fs from 'node:fs';
 
 console.log('Leyendo el primer archivo...');
-fs.readFile('./file.txt', 'utf-8', (error, text) => {
-    if (error) {
-        console.error('Error: ', error);
-    } else {
-        console.log(text);
-    }
-}); 
+const text = fs.readFileSync('./file.txt', 'utf-8');
 
-console.log('Cosas...');
+console.log(text);
+
+
 
 console.log('Leyendo el segundo archivo...');
-fs.readFile('./file2.txt', 'utf-8', (error, text) => {
-    if (error) {
-        console.error('Error: ', error);
-    } else {
-        console.log(text);
-    }
-});
+const text2 =  fs.readFileSync('./file2.txt', 'utf-8');
+console.log(text2);
