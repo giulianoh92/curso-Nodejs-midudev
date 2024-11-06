@@ -1,0 +1,24 @@
+{
+  "name": "curso-node",
+  "version": "1.0.0",
+  "description": "Introduccion a Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giulianoh92/curso-Nodejs-midudev.git"
+  },
+  "keywords": [
+    "node",
+    "nodejs",
+    "curso"
+  ],
+  "author": "Giuliano Hillebrand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giulianoh92/curso-Nodejs-midudev/issues"
+  },
+  "homepage": "https://github.com/giulianoh92/curso-Nodejs-midudev#readme"
+}
