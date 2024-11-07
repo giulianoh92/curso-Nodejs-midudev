@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/giulianoh92/curso-Nodejs-midudev/issues"
   },
-  "homepage": "https://github.com/giulianoh92/curso-Nodejs-midudev#readme"
+  "homepage": "https://github.com/giulianoh92/curso-Nodejs-midudev#readme",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  }
 }
