@@ -7,12 +7,17 @@ const processRequest = (req, res) => {
 
     switch (method) {
         case 'GET':
+            res.setHeader('Content-Type', 'text/html');
             switch (url) {
                 case '/':
-                    res.end('Hello World');
+                    res.end('<h1>Home</h1>' +
+                        '<a href="/about">About</a>'
+                    );  
                     break;
                 case '/about':
-                    res.end('About Us');
+                    res.end('<h1>About</h1>' +
+                        '<a href="/">Home</a>'
+                    );
                     break;
                 default:
                     res.statusCode = 404;

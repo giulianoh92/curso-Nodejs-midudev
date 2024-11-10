@@ -1,7 +1,1 @@
-POST http://localhost:3000/user
-Content-Type: application/json
-
-{
-    "name": "Juan",
-    "age": 25
-}
+GET localhost:8080
