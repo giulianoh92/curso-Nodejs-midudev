@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('node:fs');
+const cors = require('cors');
 const crypto = require('node:crypto');
 const movies = require('./movies.json');
 const { validateMovie, validatePartialMovie } = require('./schemas/movies');
@@ -9,14 +10,26 @@ app.disable('x-powered-by'); // Deshabilita la cabecera X-Powered-By
 const port = process.env.PORT ?? 3000;
 
 app.use(express.json());
+app.use(cors({
+    origin: (origin, callback) => {
+        const ACCEPTED_ORIGINS = [
+            'http://localhost:3000', 
+            'http://localhost:8080', 
+            'https://my-app.com'
+        ];
+        if (ACCEPTED_ORIGINS.includes(origin)) {
+            return callback(null, true);
+        }
+
+        callback(new Error('Not allowed by CORS'));
+    }
+}));
 
 app.get('/', (req, res) => {
     res.json({ message: 'Hello World' });
 });
 
 app.get('/movies', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*');
-
     const { genre } = req.query;
     if (genre) {
         const filteredMovies = movies.filter(
